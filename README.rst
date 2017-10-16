@@ -9,7 +9,7 @@ This implementation is a variation of (and takes inspiration from) the current i
 Usage
 -----
 
-The ``stldecompose`` package is relatively lightweight, exposing only a couple of primary methods: ``decompose()`` and ``forecast()``, along with a handful of built-in forecasting functions. See [the included IPython notebook](https://github.com/jrmontag/STLDecompose/blob/master/STL%20usage%20example.ipynb) for more details.  
+The ``stldecompose`` package is relatively lightweight, exposing only a couple of primary methods: ``decompose()`` and ``forecast()``, along with a handful of built-in forecasting functions. See `the included IPython notebook <https://github.com/jrmontag/STLDecompose/blob/master/STL%20usage%20example.ipynb>`_ for more details.  
 
 
 
