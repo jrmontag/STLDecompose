@@ -65,7 +65,9 @@ def drift(data, n=3, **kwargs):
     Args:
         data (np.array): Observed data, presumed to be ordered in time.
         n (int): period over which to calculate linear model for extrapolation 
-    Returns a single-valued forecast for the next value in the series.
+
+    Returns: 
+        float: a single-valued forecast for the next value in the series.
     """
     yi = data[-n]
     yf = data[-1]
