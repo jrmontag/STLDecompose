@@ -9,8 +9,9 @@ This implementation is a variation of (and takes inspiration from) the current i
 Usage
 -----
 
-The ``stldecompose`` package is relatively lightweight, exposing only a couple of primary methods: ``decompose()`` and ``forecast()``, along with a handful of built-in forecasting functions. See `the included IPython notebook <https://github.com/jrmontag/STLDecompose/blob/master/STL%20usage%20example.ipynb>`_ for more details.  
+The ``stldecompose`` package is relatively lightweight. It uses ``pandas.Dataframe`` for inputs and outputs, and exposes only a couple of primary methods - ``decompose()`` and ``forecast()`` - as well as a handful of built-in forecasting functions. 
 
+See `the included IPython notebook <https://github.com/jrmontag/STLDecompose/blob/master/STL%20usage%20example.ipynb>`_ for more details and usage examples.
 
 
 Installation
@@ -18,16 +19,18 @@ Installation
 
 A Python 3 virtual environment is recommended.
 
-Current installation is via cloning this repo to your local workspace and a local pip install:: 
-    
+The preferred method of installation is via ``pip``:
+
+``(env) $ pip install stldecompose``
+
+If you'd like the bleeding-edge version, you can also install from this Github repo::
+ 
     (env) $ git clone git@github.com:jrmontag/STLDecompose.git 
     (env) $ cd STLDecompose; pip install . 
-
 
 
 More Resources
 --------------
 
 - ``statsmodels`` `Time Series analysis <http://www.statsmodels.org/stable/tsa.html>`_ package
-- Hyndman's `OTexts reference on STL decomposition <https://www.otexts.org/fpp/6/5>`_  
- 
+- Hyndman's `OTexts reference on STL decomposition <https://www.otexts.org/fpp/6/5>`_ 
