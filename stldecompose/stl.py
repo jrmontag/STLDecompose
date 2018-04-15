@@ -47,6 +47,9 @@ def decompose(df, period=365, lo_frac=0.6, lo_delta=0.01):
                    return_sorted=False)
     detrended = observed - trend
 
+    # period must not be larger than size of series to avoid introducing NaNs
+    period = min(period, len(observed))
+
     # calc one-period seasonality, remove tiled array from detrended
     period_averages = np.array([pd_nanmean(detrended[i::period]) for i in range(period)])
     # 0-center the period avgs
