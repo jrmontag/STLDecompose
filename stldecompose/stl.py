@@ -104,7 +104,7 @@ def forecast(stl, fc_func, steps=10, seasonal=False, **fc_func_kwargs):
     col_name = fc_func.__name__
 
     # forecast index starts one unit beyond observed series
-    ix_start = stl.observed.index[-1] + pd.Timedelta(1, stl.observed.index.freqstr)     
+    ix_start = stl.observed.index[-1] + pd.Timedelta(1, freq=stl.observed.index.freqstr)     
     forecast_idx = pd.DatetimeIndex(freq=stl.observed.index.freqstr,
                                     start=ix_start, 
                                     periods=steps)
