@@ -5,6 +5,8 @@
 
 # Note: To use the 'upload' functionality of this file, you must:
 #   $ pip install twine
+# and then you can upload to PyPI via:
+#   (env) STLDecompose [master] $ python setup.py upload 
 
 import io
 import os
