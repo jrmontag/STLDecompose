@@ -34,4 +34,4 @@ More Resources
 
 - ``statsmodels`` `Time Series analysis <http://www.statsmodels.org/stable/tsa.html>`_ package
 - Hyndman's `OTexts reference on STL decomposition <https://www.otexts.org/fpp/6/5>`_ 
-- Cleveland et al. 1990 [`pdf <https://www.wessa.net/download/stl.pdf>`_]).   
+- Cleveland et al. 1990 [`pdf <https://www.wessa.net/download/stl.pdf>`_]
