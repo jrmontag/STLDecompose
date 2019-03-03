@@ -96,6 +96,7 @@ def forecast(stl, fc_func, steps=10, seasonal=False, **fc_func_kwargs):
     trend_array = stl.trend
 
     # iteratively forecast trend ("seasonally adjusted") component
+    # note: this loop can be slow
     for step in range(steps):
         # make this prediction on all available data
         pred = fc_func(np.append(trend_array, forecast_array), **fc_func_kwargs)
@@ -103,11 +104,12 @@ def forecast(stl, fc_func, steps=10, seasonal=False, **fc_func_kwargs):
         forecast_array = np.append(forecast_array, pred)
     col_name = fc_func.__name__
 
-    # forecast index starts one unit beyond observed series
-    ix_start = stl.observed.index[-1] + pd.Timedelta(1, stl.observed.index.freqstr)     
-    forecast_idx = pd.DatetimeIndex(freq=stl.observed.index.freqstr,
-                                    start=ix_start, 
-                                    periods=steps)
+    # forecast start and index are determined by observed data 
+    observed_timedelta = stl.observed.index[-1] - stl.observed.index[-2]
+    forecast_idx_start = stl.observed.index[-1] + observed_timedelta
+    forecast_idx = pd.date_range(start=forecast_idx_start, 
+                                 periods=steps,
+                                 freq=pd.tseries.frequencies.to_offset(observed_timedelta))
 
     # (optionally) forecast seasonal & combine 
     if seasonal:
