@@ -24,6 +24,7 @@ AUTHOR = 'Josh Montague'
 REQUIRED = [
     'pandas',
     'numpy',
+    'scipy',
     'statsmodels',
     'matplotlib',
 ]
